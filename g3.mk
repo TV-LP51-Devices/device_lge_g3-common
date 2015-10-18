@@ -166,6 +166,7 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdashplayer \
     libdivxdrmdecrypt \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -174,6 +175,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVdecHevc \
     libOmxVenc \
+    libOmxVidcCommon \
+    libqcmediaplayer \
     libstagefrighthw \
     qcmediaplayer
 
