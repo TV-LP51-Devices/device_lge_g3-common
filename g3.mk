@@ -205,12 +205,20 @@ PRODUCT_PACKAGES += \
     init.galbi.usb.sh \
     ueventd.g3.rc
 
+# RIL symbols
 PRODUCT_PACKAGES += \
-    init.galbi.thermal_conf.sh
+    liblge
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # Thermal
+PRODUCT_PACKAGES += \
+    thermanager
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
+    $(LOCAL_PATH)/configs/thermanager.xml:system/etc/thermanager.xml
 
 # USB
 PRODUCT_PACKAGES += \
