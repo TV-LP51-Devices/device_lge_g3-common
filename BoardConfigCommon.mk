@@ -74,7 +74,7 @@ COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND=' \
 
 # CMHW
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/lpwg_notify"
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap_to_wake"
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -89,6 +89,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
