@@ -49,9 +49,6 @@ PRODUCT_COPY_FILES += \
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
@@ -81,12 +78,16 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Bluetooth
 PRODUCT_PACKAGES += \
     bdAddrLoader
+
+# BoringSSL compatability wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -117,17 +118,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/Button_Jack.kl:system/usr/keylayout/Button_Jack.kl \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/lgps11-keypad.kl:system/usr/keylayout/lgps11-keypad.kl
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/keypad-8974.idc:system/usr/idc/keypad-8974.idc \
-    $(LOCAL_PATH)/idc/synaptics-ts.idc:system/usr/idc/synaptics-ts.idc \
-    $(LOCAL_PATH)/idc/touch_dev.idc:system/usr/idc/touch_dev.idc
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8974
@@ -152,9 +142,9 @@ PRODUCT_PACKAGES += \
     Tag
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+    $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # Offmode Charging
 PRODUCT_PACKAGES += \
@@ -189,6 +179,7 @@ PRODUCT_PACKAGES += \
 
 # Radio
 PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
     libxml2
 
 # Ramdisk
