@@ -51,7 +51,7 @@ KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-ea
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # Rom Toolchain
-TARGET_GCC_VERSION_EXP := 4.9
+TARGET_GCC_VERSION_EXP := 5.2-uber
 
 BLOCK_BASED_OTA := true
 
