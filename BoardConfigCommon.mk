@@ -53,6 +53,13 @@ KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 # Rom Toolchain
 TARGET_GCC_VERSION_EXP := 5.2-uber
 
+# Optimizations 
+CLANG_O3 := true
+# STRICT_ALIASING := true
+KRAIT_TUNINGS := true
+# GRAPHITE_OPTS := true
+# ENABLE_GCCONLY := true
+
 BLOCK_BASED_OTA := true
 
 # Audio
