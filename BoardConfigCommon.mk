@@ -54,7 +54,7 @@ KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 TARGET_GCC_VERSION_EXP := 5.2-uber
 
 # Optimizations 
-CLANG_O3 := true
+CLANG_O3 := false
 # STRICT_ALIASING := true
 KRAIT_TUNINGS := true
 # GRAPHITE_OPTS := true
