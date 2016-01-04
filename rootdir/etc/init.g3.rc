@@ -867,6 +867,7 @@ service sensors /system/bin/sensors.qcom
     group root
     disabled
 
+<<<<<<< HEAD
 service ssr_dump /system/bin/subsystem_ramdump 1
     class late_start
     user system
@@ -891,6 +892,12 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     class late_start
     user root
     group root
+=======
+service thermal-engine /system/bin/thermal-engine
+   class main
+   user root
+   group root
+>>>>>>> 7431dcb... g3: switch back to thermal-engine
 
 service time_daemon /system/bin/time_daemon
    class late_start
