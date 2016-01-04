@@ -116,6 +116,7 @@ on early-boot
     exec /system/bin/sh /init.galbi.early_boot.sh ${ro.board.platform}
     exec /system/bin/sh /system/etc/init.qcom.wifi.sh ${ro.board.platform} ${ro.serialno}
     exec /system/bin/sh /system/etc/init.galbi.audio.sh ${ro.board.platform}
+
     # disable lmk_fast_run
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
@@ -128,6 +129,8 @@ on boot
     write /sys/module/msm_thermal/core_control/enabled 1
 
     insmod /system/lib/modules/adsprpc.ko
+
+    mkdir /dev/socket/netmgr 0750 radio radio
 
     # BCM
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
